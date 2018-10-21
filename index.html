@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <canvas width="640" height="480"></canvas>
   <script src="common/draw.js"></script>
   <script src="common/collisions.js"></script>
   <script src="classes/ball.js"></script>
@@ -14,6 +15,13 @@
   <script src="classes/game.js"></script>
   <script>
     const game = new Game();
+    clear();
+    drawRectangle(0, 0, 20, 20);
+    fillColor('#0f0');
+    drawCircle(35, 10, 10);
+    fillColor('#0ff');
+    drawCircle(35, 10, 10);
+    fillColor('#0ff');
   </script>
 </body>
 </html>
