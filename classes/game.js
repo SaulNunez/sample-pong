@@ -4,6 +4,7 @@
 class Game {
   constructor() {
     this.lastTime = 0;
+    this.stage = new Stage();
     // Petición para llamar loop() en el siguiente frame.
     requestAnimationFrame((ms) => this.loop(ms));
   }
@@ -16,7 +17,8 @@ class Game {
     // Se calcula la diferencia de tiempo (en segundos) entre el frame actual y el anterior.
     const deltaTime = this.getDeltaTime(ms, this.lastTime);
 
-    console.log(deltaTime);
+    this.stage.update(deltaTime, ms);
+    this.stage.draw(deltaTime, ms);
 
     // Se registra el tiempo actual, para tener acceso a él en el siguiente frame.
     this.lastTime = ms;
