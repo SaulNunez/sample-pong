@@ -1,6 +1,7 @@
 class Player {
-  constructor() {
-
+  constructor(x, y, width, height) {
+    this.rect = new Rectangle(x, y, width, height);
+    this.color = "#fff";
   }
 
   /**
@@ -20,6 +21,7 @@ class Player {
    * @param {number} ms
    */
   draw(deltaTime, ms) {
-
+    this.rect.draw();
+    fillColor(this.color);
   }
 }

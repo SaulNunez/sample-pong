@@ -1,6 +1,7 @@
 class Ball {
-  constructor() {
-
+  constructor(x, y, width, height) {
+    this.rect = new Rectangle(x, y, width, height);
+    this.color = "#fff";
   }
 
   /**
@@ -20,6 +21,7 @@ class Ball {
    * @param {number} ms
    */
   draw(deltaTime, ms) {
-
+    this.rect.draw();
+    fillColor(this.color);
   }
 }
