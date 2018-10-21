@@ -4,9 +4,9 @@
  */
 class Stage {
   constructor() {
-    this.leftPlayer = new Player();
-    this.rightPlayer = new Player();
-    this.ball = new Ball();
+    this.leftPlayer = new Player(10, 190, 20, 100);
+    this.rightPlayer = new Player(610, 190, 20, 100);
+    this.ball = new Ball(310, 230, 20, 20);
   }
 
   /**
