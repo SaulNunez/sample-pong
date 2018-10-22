@@ -1,6 +1,7 @@
+/// <reference path="draw.js" />
 /**
- * Clase lógica de rectángulo.
- * Utilizada sólo para tener un manejo común de los rectangulos.
+ * Clase rectángulo.
+ * Utilizada para tener un manejo común de los rectángulos.
  */
 class Rectangle {
   constructor(x = 0, y = 0, width = 0, height = 0) {
