@@ -13,6 +13,19 @@ function testRectanglePointOverlap(rect, point) {
 }
 
 /**
+ * Determina si hay una colisión entre un objeto de tipo círculo y un objeto de tipo punto.
+ * @param {Circle} circle - Referencia al objeto círculo.
+ * @param {Point} point - Referncia al objeto punto.
+ * @returns {boolean}
+ */
+function testCirclePointOverlap(circle, point) {
+	const distX = circle.x - point.x;
+    const distY = circle.y - point.y;
+
+    return (distX ** 2 + distY ** 2) <= circleA.radius ** 2;
+}
+
+/**
  * Determina si hay una colisión entre dos objetos de tipo círculo.
  * @param {Circle} circleA - Referencia al primer círculo.
  * @param {Circle} circleB - Referencia al segundo círculo.
@@ -22,7 +35,7 @@ function testCircleCircleOverlap(circleA, circleB) {
     const distX = circleA.x - circleB.x;
     const distY = circleA.y - circleB.y;
 
-    return (distX ** 2 + distY ** 2) < (circleA.radius + circleB.radius) ** 2;
+    return (distX ** 2 + distY ** 2) <= (circleA.radius + circleB.radius) ** 2;
 }
 
 /**
