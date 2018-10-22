@@ -1,3 +1,5 @@
+/// <reference path="stage.js" />
+
 /**
  * Clase encargada de definir el ciclo principal del juego, además del estado actual del juego.
  */

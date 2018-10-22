@@ -1,3 +1,5 @@
+/// <reference path="player.js" />
+/// <reference path="ball.js" />
 /**
  * Escenario del juego.
  * Clase encargada de manejar las instancias del juego, las collisiones, el tiempo transcurrido, el ganador, etcétera.

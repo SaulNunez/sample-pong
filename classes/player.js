@@ -1,3 +1,7 @@
+/// <reference path="../common/collisions.js" />
+/// <reference path="../common/rectangle.js" />
+/// <reference path="../common/draw.js" />
+
 class Player {
   constructor(x, y, width, height) {
     this.rect = new Rectangle(x, y, width, height);
