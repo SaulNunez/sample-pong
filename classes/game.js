@@ -5,6 +5,7 @@
  */
 class Game {
   constructor() {
+    // Registro en milisegundos del último fotograma.
     this.lastTime = 0;
     this.stage = new Stage();
     // Petición para llamar loop() en el siguiente frame.
