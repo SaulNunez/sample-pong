@@ -7,8 +7,15 @@
  */
 class Stage {
   constructor() {
-    const leftPlayerController = { up: new KeyboardControl(["w", "W"]), down: new KeyboardControl(["s", "S"]) };
-    const rightPlayerController = { up: new KeyboardControl(["ArrowUp", "8"]), down: new KeyboardControl(["ArrowDown", "2"]) };
+    const leftPlayerController = {
+      up: new KeyboardControl(["w", "W"]),
+      down: new KeyboardControl(["s", "S"]),
+    };
+
+    const rightPlayerController = {
+      up: new KeyboardControl(["ArrowUp", "8"]),
+      down: new KeyboardControl(["ArrowDown", "2"]),
+    };
 
     this.leftPlayer = new Player(10, 190, 20, 100, "#fff", leftPlayerController);
     this.rightPlayer = new Player(610, 190, 20, 100, "#fff", rightPlayerController);

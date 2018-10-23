@@ -11,7 +11,7 @@ class Player {
    * @param {number} width - Ancho del objeto.
    * @param {number} height - Alto del objeto.
    * @param {string} color - Color del objeto.
-   * @param {{ up: Control, down: Control }} controls - Definición de controles del jugador
+   * @param {{ up: KeyboardControl, down: KeyboardControl }} controls - Definición de controles del jugador
    */
   constructor(x, y, width, height, color, controls) {
     this.rect = new Rectangle(x, y, width, height);
@@ -33,12 +33,12 @@ class Player {
       this.rect.y += 5;
     }
 
-    if (this.rect.top < 0) {
-      this.rect.top = 0;
+    if (this.rect.top < 10) {
+      this.rect.top = 10;
     }
 
-    if (this.rect.bottom > 480) {
-      this.rect.bottom = 480;
+    if (this.rect.bottom > 470) {
+      this.rect.bottom = 470;
     }
   }
 
