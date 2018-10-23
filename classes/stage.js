@@ -1,14 +1,18 @@
 /// <reference path="player.js" />
 /// <reference path="ball.js" />
+/// <reference path="../common/keyboard-control.js" />
 /**
  * Escenario del juego.
  * Clase encargada de manejar las instancias del juego, las collisiones, el tiempo transcurrido, el ganador, etcétera.
  */
 class Stage {
   constructor() {
-    this.leftPlayer = new Player(10, 190, 20, 100);
-    this.rightPlayer = new Player(610, 190, 20, 100);
-    this.ball = new Ball(310, 230, 20, 20);
+    const leftPlayerController = { up: new KeyboardControl(["w", "W"]), down: new KeyboardControl(["s", "S"]) };
+    const rightPlayerController = { up: new KeyboardControl(["ArrowUp", "8"]), down: new KeyboardControl(["ArrowDown", "2"]) };
+
+    this.leftPlayer = new Player(10, 190, 20, 100, "#fff", leftPlayerController);
+    this.rightPlayer = new Player(610, 190, 20, 100, "#fff", rightPlayerController);
+    this.ball = new Ball(310, 230, 12, 12);
   }
 
   /**

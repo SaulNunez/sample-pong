@@ -1,11 +1,22 @@
 /// <reference path="../common/collisions.js" />
 /// <reference path="../common/rectangle.js" />
 /// <reference path="../common/draw.js" />
+/// <reference path="../common/keyboard-control.js" />
 
 class Player {
-  constructor(x, y, width, height) {
+  /**
+   * 
+   * @param {number} x - Coordenada en X del objeto.
+   * @param {number} y - Coordenada en Y del objeto.
+   * @param {number} width - Ancho del objeto.
+   * @param {number} height - Alto del objeto.
+   * @param {string} color - Color del objeto.
+   * @param {{ up: Control, down: Control }} controls - Definición de controles del jugador
+   */
+  constructor(x, y, width, height, color, controls) {
     this.rect = new Rectangle(x, y, width, height);
-    this.color = "#fff";
+    this.color = color;
+    this.controls = controls;
   }
 
   /**
@@ -15,7 +26,20 @@ class Player {
    * @param {number} ms
    */
   update(deltaTime, ms) {
+    if (this.controls.up.isActive) {
+      this.rect.y -= 5;
+    }
+    if (this.controls.down.isActive) {
+      this.rect.y += 5;
+    }
 
+    if (this.rect.top < 0) {
+      this.rect.top = 0;
+    }
+
+    if (this.rect.bottom > 480) {
+      this.rect.bottom = 480;
+    }
   }
 
   /**

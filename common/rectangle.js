@@ -18,11 +18,19 @@ class Rectangle {
     return this.y;
   }
 
+  set top (value) {
+    this.y = value;
+  }
+
   /**
    * Propiedad tipo get para obtener la coordenada inferior del rectángulo.
    */
   get bottom() {
     return this.y + this.height;
+  }
+
+  set bottom(value) {
+    this.y = value - this.height;
   }
 
   /**
@@ -32,11 +40,19 @@ class Rectangle {
     return this.x;
   }
 
+  set left(value) {
+    this.x = value;
+  }
+
   /**
    * Propiedad tipo get para obtener la coordenada derecha del rectángulo.
    */
   get right() {
     return this.x + this.width;
+  }
+
+  set right(value) {
+    this.x = value - this.width;
   }
 
   /**
