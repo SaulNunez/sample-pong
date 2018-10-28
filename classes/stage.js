@@ -24,7 +24,7 @@ class Stage {
 
   /**
    * Función llamada cada fotograma.
-   * Se encarga de llamar la función draw de cada una de las instancias hijas.
+   * Se encarga de llamar la función update de cada una de las instancias hijas.
    * @param {number} deltaTime
    * @param {number} ms
    */

@@ -5,7 +5,7 @@
 
 class Player {
   /**
-   * 
+   *
    * @param {number} x - Coordenada en X del objeto.
    * @param {number} y - Coordenada en Y del objeto.
    * @param {number} width - Ancho del objeto.
@@ -27,10 +27,10 @@ class Player {
    */
   update(deltaTime, ms) {
     if (this.controls.up.isActive) {
-      this.rect.y -= 5;
+      this.rect.y -= 300 * deltaTime;
     }
     if (this.controls.down.isActive) {
-      this.rect.y += 5;
+      this.rect.y += 300 * deltaTime;
     }
 
     if (this.rect.top < 10) {

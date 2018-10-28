@@ -38,8 +38,8 @@ class Ball {
     }
 
     // Cada fotograma actualizamos la posición del rectángulo, en base a la rapidez y su dirección.
-    this.rect.x += this.speed * this.direction.x;
-    this.rect.y += this.speed * this.direction.y;
+    this.rect.x += this.speed * this.direction.x * deltaTime * 60;
+    this.rect.y += this.speed * this.direction.y * deltaTime * 60;
   }
 
   /**
