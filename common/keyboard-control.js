@@ -2,7 +2,7 @@ const activeKeys = new Set();
 
 class KeyboardControl {
     /**
-     * 
+     *
      * @param {string[]} keys
      */
     constructor(keys) {
@@ -33,4 +33,5 @@ document.addEventListener('keydown', ($event) => {
 
 document.addEventListener('keyup', ($event) => {
     activeKeys.delete($event.key);
+    console.log(...activeKeys);
 });

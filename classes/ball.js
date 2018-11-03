@@ -6,6 +6,10 @@ class Ball {
     this.rect = new Rectangle(x, y, width, height);
     this.color = "#fff";
     this.speed = 5;
+    this.isCollidingWithLeftPlayer = false;
+    this.isCollidingWithRightPlayer = false;
+    this.collidedWithLeftSide = false;
+    this.collidedWithRightSide = false;
 
     /**
      * Se elige una dirección al azar entre (1, 1), (1, -1), (-1, 1), (-1, -1).
@@ -27,14 +31,34 @@ class Ball {
    * @param {number} ms
    */
   update(deltaTime, ms) {
+    this.collidedWithLeftSide = false;
+    this.collidedWithRightSide = false;
     // Si los extremos horizontales del rectángulo llegan a 480px o 0px (límites horizontales del juego), se invierte el componente X de la dirección.
-    if (this.rect.right >= 640 || this.rect.left <= 0) {
-      this.direction.x *= -1;
+    if (this.rect.right >= 640) {
+      this.collidedWithRightSide = true;
+      this.direction.x = -1;
+    }
+
+    if (this.rect.left <= 0) {
+      this.collidedWithLeftSide = true;
+      this.direction.x = 1;
     }
 
     // Si los extremos verticales del rectángulo llegan a 640px o 0px (límites verticales del juego), se invierte el componente Y de la dirección.
-    if (this.rect.bottom >= 480 || this.rect.top <= 0) {
-      this.direction.y *= -1;
+    if (this.rect.bottom >= 480) {
+      this.direction.y = -1;
+    }
+
+    if (this.rect.top <= 0) {
+      this.direction.y = 1;
+    }
+
+    if (this.isCollidingWithLeftPlayer) {
+      this.direction.x = 1;
+    }
+
+    if (this.isCollidingWithRightPlayer) {
+      this.direction.x = -1;
     }
 
     // Cada fotograma actualizamos la posición del rectángulo, en base a la rapidez y su dirección.

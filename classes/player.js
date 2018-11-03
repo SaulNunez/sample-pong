@@ -27,10 +27,10 @@ class Player {
    */
   update(deltaTime, ms) {
     if (this.controls.up.isActive) {
-      this.rect.y -= 300 * deltaTime;
+      this.rect.y -= 400 * deltaTime;
     }
     if (this.controls.down.isActive) {
-      this.rect.y += 300 * deltaTime;
+      this.rect.y += 400 * deltaTime;
     }
 
     if (this.rect.top < 10) {

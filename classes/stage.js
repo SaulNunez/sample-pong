@@ -1,5 +1,6 @@
 /// <reference path="player.js" />
 /// <reference path="ball.js" />
+/// <reference path="../common/collisions.js" />
 /// <reference path="../common/keyboard-control.js" />
 /**
  * Escenario del juego.
@@ -7,6 +8,11 @@
  */
 class Stage {
   constructor() {
+    this.start();
+  }
+
+  start() {
+    activeKeys.clear();
     const leftPlayerController = {
       up: new KeyboardControl(["w", "W"]),
       down: new KeyboardControl(["s", "S"]),
@@ -20,6 +26,10 @@ class Stage {
     this.leftPlayer = new Player(10, 190, 20, 100, "#fff", leftPlayerController);
     this.rightPlayer = new Player(610, 190, 20, 100, "#fff", rightPlayerController);
     this.ball = new Ball(310, 230, 12, 12);
+    this.scores = {
+      leftPlayer: 0,
+      rightPlayer: 0,
+    };
   }
 
   /**
@@ -29,9 +39,33 @@ class Stage {
    * @param {number} ms
    */
   update(deltaTime, ms) {
+    const ballCollidesWithLeftPlayer = testRectangleRectangleOverlap(this.ball.rect, this.leftPlayer.rect);
+    const ballCollidesWithRightPlayer = testRectangleRectangleOverlap(this.ball.rect, this.rightPlayer.rect);
+
+    this.ball.isCollidingWithLeftPlayer = ballCollidesWithLeftPlayer;
+    this.ball.isCollidingWithRightPlayer = ballCollidesWithRightPlayer;
+
     this.leftPlayer.update(deltaTime, ms);
     this.rightPlayer.update(deltaTime, ms);
     this.ball.update(deltaTime);
+
+    if (this.ball.collidedWithRightSide) {
+      this.scores.leftPlayer++;
+    }
+
+    if (this.ball.collidedWithLeftSide) {
+      this.scores.rightPlayer++;
+    }
+
+    if (this.scores.rightPlayer > 5) {
+      alert("Ganó el jugador derecho");
+      this.start();
+    }
+
+    if (this.scores.leftPlayer > 5) {
+      alert("Ganó el jugador izquierdo");
+      this.start();
+    }
   }
 
   /**
