@@ -42,6 +42,12 @@ function drawImage(image, x = 0, y = 0, width = 0, height = 0) {
   context.drawImage(image, x, y, width, height, 0, 0, 1, 1);
 }
 
+function drawText(text, color, font, size, x = 0, y = 0){
+  context.fillStyle = color;
+  context.font = size + ' ' + font;
+  context.fillText(text,x,y);
+}
+
 /**
  * Rellena el dibujo actual con el color brindado.
  * @param {string} color - Color CSS para rellenar el dibujo actual.

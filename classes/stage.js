@@ -79,6 +79,9 @@ class Stage {
     drawRectangle(0, 0, 640, 480);
     fillColor("#000");
 
+    drawText(this.scores.leftPlayer.toString(), 'white', 'bit5x3', '72px', 320 + 16, 64);
+    drawText(this.scores.rightPlayer.toString(), 'white', 'bit5x3', '72px', 320 + 16 - 72, 64);
+
     // Se dibujan los jugadores.
     this.leftPlayer.draw(deltaTime, ms);
     this.rightPlayer.draw(deltaTime, ms);

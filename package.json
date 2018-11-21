@@ -1,0 +1,35 @@
+{
+  "name": "sample-pong",
+  "version": "1.0.0",
+  "description": "A small pong game",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaulNunez/sample-pong.git"
+  },
+  "keywords": [
+    "pong"
+  ],
+  "author": "Abel Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SaulNunez/sample-pong/issues"
+  },
+  "homepage": "https://github.com/SaulNunez/sample-pong#readme"
+}
